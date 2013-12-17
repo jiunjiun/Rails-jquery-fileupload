@@ -1,0 +1,29 @@
+// Place all the styles related to the UploadPhotos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+    margin: 0 15px;
+}
+
+.drop{
+    position: relative;
+    margin: 0;
+
+    #dropzone {
+        position: absolute;
+        height: 80px;
+    }
+
+    #dropzone.in {
+        z-index: 1;
+        border: 5px dashed #e69;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    #dropzone.hover {
+        border: 5px dashed #FDD017;
+        background-color: #FFF380;
+    }
+}

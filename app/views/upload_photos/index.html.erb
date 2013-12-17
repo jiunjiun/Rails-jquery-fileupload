@@ -1,0 +1,33 @@
+<h1>Listing upload_photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>File</th>
+      <th>Size</th>
+      <th>Content type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upload_photos.each do |upload_photo| %>
+      <tr>
+        <td><%= upload_photo.name %></td>
+        <td><%= image_tag(upload_photo.file_url(:thumb)) %></td>
+        <td><%= upload_photo.size %></td>
+        <td><%= upload_photo.content_type %></td>
+        <td><%= link_to 'Show', upload_photo %></td>
+        <td><%= link_to 'Edit', edit_upload_photo_path(upload_photo) %></td>
+        <td><%= link_to 'Destroy', upload_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Upload photo', new_upload_photo_path %>
